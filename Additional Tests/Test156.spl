@@ -1,0 +1,17 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE REAL;
+	
+CODE
+
+  FOR a IS 0.1 BY 0.1 TO 0.5 DO
+     WRITE(a);
+     NEWLINE
+  ENDFOR;
+  NEWLINE
+
+ENDP 
+
+Test.

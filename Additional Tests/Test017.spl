@@ -1,0 +1,18 @@
+Test17:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  1.0 -> d;
+
+  NEWLINE
+
+ENDP 
+
+Test17
+.

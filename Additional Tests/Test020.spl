@@ -1,0 +1,17 @@
+Test20:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  -1 -> a;
+
+  NEWLINE
+
+ENDP 
+
+Test20.

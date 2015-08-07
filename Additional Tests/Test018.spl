@@ -1,0 +1,18 @@
+Test18:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  'x' -> f;
+
+  NEWLINE
+
+ENDP 
+
+Test18
+.

@@ -1,0 +1,17 @@
+Test29:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  'x' -> d;
+
+  NEWLINE
+
+ENDP 
+
+Test29.

@@ -1,0 +1,17 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE INTEGER;
+	
+CODE
+
+  1 -> a;
+  IF a > 0 THEN
+    WRITE(a)
+  ENDIF;
+  NEWLINE
+
+ENDP 
+
+Test.

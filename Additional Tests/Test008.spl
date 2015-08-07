@@ -1,0 +1,13 @@
+Test8:
+
+DECLARATIONS
+   
+	a OF TYPE INTEGER;
+
+CODE
+
+  NEWLINE
+
+ENDP 
+
+Test8.

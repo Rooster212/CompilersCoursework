@@ -1,0 +1,17 @@
+Test36:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	Test36,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  1 -> a;
+
+  NEWLINE
+
+ENDP 
+
+Test36.

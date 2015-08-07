@@ -1,0 +1,18 @@
+Test19:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  0 -> a;
+
+  NEWLINE
+
+ENDP 
+
+Test19
+.

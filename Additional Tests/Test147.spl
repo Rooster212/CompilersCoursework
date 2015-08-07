@@ -1,0 +1,18 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE INTEGER;
+	
+CODE
+
+  1 -> a;
+  DO
+    WRITE(a);
+    a + 1 -> a
+  WHILE a <= 0 ENDDO;
+  NEWLINE
+
+ENDP 
+
+Test.

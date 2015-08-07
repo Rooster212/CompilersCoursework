@@ -1,0 +1,13 @@
+Test11:
+
+DECLARATIONS
+   
+	a OF TYPE CHAR;
+
+CODE
+
+  NEWLINE
+
+ENDP 
+
+Test11.

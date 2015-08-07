@@ -1,0 +1,90 @@
+<digit> ::= 0|1|2|3|4|5|6|7|8|9
+<letter> ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|
+             A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+			 
+
+<number> ::= <digit> 
+			| <number> <digit>
+<integer> ::= <number> 
+			| "-" <number>
+<real> ::= <integer> "." <number>
+
+<program> ::= <identifier> ":" <block> ENDP <identifier> "."
+
+<block> ::= DECLARATIONS <declaration_block> CODE <statement_list> 
+			| CODE <statement_list>
+
+<declaration> ::= <identifier_list> OF TYPE <type> ";" 
+
+<declaration_block> ::= <declaration > | <declaration> <declaration_block>
+					 
+<identifier_list> ::=  <identifier> "," <identifier_list> 
+		
+<type> ::= CHARACTER | INTEGER | REAL
+
+<statement_list> ::= <statement> 
+			| <statement> ";" <statement_list>
+
+<statement> ::= <if_statement> 
+			| <do_statement> 
+			| <while_statement> 
+			| <for_statement> 
+			| <write_statement> 
+			| <read_statement>
+
+<assignment_statement> ::= <expression> "->" <identifier>
+
+<if_statement> ::= IF <conditional> THEN <statement_list> ELSE <statement_list> ENDIF 
+			| IF <conditional> THEN <statement_list> ENDIF
+
+<do_statement> ::= DO <statement_list> WHILE <conditional> ENDDO
+
+<while_statement> ::= WHILE <conditional> DO <statement_list> ENDWHILE
+
+<for_statement> ::= FOR <identifier> IS <expression> BY <expression> TO <expression> DO <statement_list> ENDFOR
+
+<write_statement> ::= WRITE "(" <output_list> ")" 
+			| NEWLINE
+
+<read_statement> ::= READ "(" <identifier> ")"
+
+<output_list> ::= <value> | <value> "," <output_list>
+
+<conditional> ::= <conditional_statements> 
+			| <not_expression> <conditional_statements>
+			| <conditional_statements> AND <conditional>
+			| <conditional_statements> OR <conditional>
+
+<not_expression> ::= NOT | <not_expression> NOT
+<conditional_statements> ::= <not_expression> <expression> <comparator> <expression> 
+						| <expression> <comparator> <expression>
+
+<comparator> ::= "=" | "<>" | "<" | ">" | "<=" | ">="
+
+<expression> ::= <term> 
+			| <term> "+" <expression>
+			| <term> "-" <expression>
+			
+<term> ::= <value> 
+			| <value> "*" <term> 
+			| <value> "/" <term>
+
+<value> ::= <identifier> 
+			| <constant> 
+			| "(" <expression> ")"
+
+<constant> ::= <number_constant> 
+			| <character_constant>
+
+<character_constant> ::=  "'" <character> "'"
+
+<number_constant> ::= <integer> 
+			| <real>
+
+<identifier> ::= <character> <identifier_sub>
+			
+<identifier_sub> ::= <character> 
+			| <digit>
+			| <character> <identifier_sub>
+			| <digit> <identifier_sub>
+			

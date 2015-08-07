@@ -1,0 +1,17 @@
+Test35:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	a,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  1 -> a;
+
+  NEWLINE
+
+ENDP 
+
+Test35.

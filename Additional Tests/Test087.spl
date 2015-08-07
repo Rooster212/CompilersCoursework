@@ -1,0 +1,15 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE INTEGER;
+	
+CODE
+
+  20 / -2 -> a;
+  WRITE(a);
+  NEWLINE
+
+ENDP 
+
+Test.

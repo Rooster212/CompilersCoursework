@@ -1,0 +1,23 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE INTEGER;
+  b OF TYPE INTEGER;
+
+	
+CODE
+
+  1 -> a;
+  2 -> b;
+  IF a > b THEN
+    WRITE('a');
+    NEWLINE
+  ELSE
+    WRITE('b');
+    NEWLINE
+  ENDIF
+
+ENDP 
+
+Test.

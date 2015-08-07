@@ -1,0 +1,17 @@
+Test21:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  2147483647 -> a;
+
+  NEWLINE
+
+ENDP 
+
+Test21.

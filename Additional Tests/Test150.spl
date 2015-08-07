@@ -1,0 +1,16 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE INTEGER;
+	
+CODE
+
+  FOR a IS 1 BY 1 TO 5 DO
+     WRITE(a)
+  ENDFOR;
+  NEWLINE
+
+ENDP 
+
+Test.

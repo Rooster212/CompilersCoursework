@@ -1,0 +1,17 @@
+Test32:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f OF TYPE CHARACTER;
+
+CODE
+
+  -75 -> f;
+
+  NEWLINE
+
+ENDP 
+
+Test32.

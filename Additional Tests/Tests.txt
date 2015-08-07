@@ -1,0 +1,161 @@
+TEST  TYPE      CATEGORY	DESCRIPTION
+001 - #codegen  Minimal		Minimal SPL
+002 - #warning 	Minimal		Minimal SPL with non-matching program identifiers
+003 - #codegen  Minimal		Minimal SPL with spacing
+004 - #warning  Minimal		Minimal SPL with extra semicolon at the end
+005 - #error    Minimal		Minimal SPL with syntax error -- semicolon instead of colon
+006 - #error    Minimal		Minimal SPL with syntax error -- comma instead of full stop
+007 - #error    Minimal		Minimal SPL with syntax error -- no full stop
+008 - #codegen  Decls		Declaration of one integer
+009 - #codegen  Decls		Declaration of one real
+010 - #codegen  Decls		Declaration of one character
+011 - #error    Decls		Declaration of one character but with syntax error (char instead of character)
+012 - #error    Decls		Declaration of one character but with syntax error (no semicolon)
+013 - #codegen  Decls		Declaration of three different types
+014 - #error    Decls		Declaration of three different types but with syntax error (missing semicolon)
+015 - #codegen  Decls		Declaration of many variables of different types
+016 - #codegen  Assignment	Assignment of 1 to int var
+017 - #codegen  Assignment	Assignment of 1.0 to real var
+018 - #codegen  Assignment	Assignment of 'x' to char var
+019 - #codegen  Assignment	Assignment of 0 to int var
+020 - #codegen  Assignment	Assignment of -1 to int var
+021 - #codegen  Assignment	Assignment of INT_MAX to int var
+022 - #codegen  Assignment	Assignment of INT_MIN to int var
+023 - #option   Assignment	Assignment of 1.0 to int var (could be rejected as type coercion)
+024 - #option   Assignment	Assignment of 3.14159 to int var (could be rejected as type coercion)
+025 - #option   Assignment	Assignment of 'x' to int var (could be rejected as type coercion)
+026 - #codegen  Assignment	Assignment of 3.14159 to real var
+027 - #codegen  Assignment	Assignment of -3.14159 to real var
+028 - #codegen  Assignment	Assignment of INT_MAX to real var
+029 - #option   Assignment	Assignment of 'x' to real var (could be rejected as type coercion)
+030 - #error    Assignment	Assignment of 'xx' to char var
+031 - #option   Assignment	Assignment of 75 to char var (ASCII 'K') (could be rejected as type coercion)
+032 - #warning  Assignment	Assignment of -75 to char var (ought to be rejected; -75 is not a valid char)
+033 - #warning  Assignment	Assignment of 75.012 to char var (ought to be rejected; 75.012 is not a valid char)
+034 - #error    Assignment	Assignment of 75 to undeclared ID
+035 - #error    Decls		Redeclaration of identifier
+036 - #option   Decls		Declaration of program identifier (may choose to disallow this)
+037 - #error    Assignment	Assignment to program identifier (without being declared first)
+038 - #error    Syntax		Missing semicolon after statement
+039 - #warning  Assignment	Use of variable before it has a value assigned (int -> int)
+040 - #codegen  Assignment	Assignment of real var to real var
+041 - #codegen  Assignment	Assignment of char var to char var
+042 - #codegen  Assignment	Assignment of int var to real var
+043 - #codegen  Assignment	Assignment of char var to real var
+044 - #codegen  Assignment	Assignment of real var to int var
+045 - #codegen  Assignment	Assignment of char var to int var
+046 - #warning  Assignment	Assignment of int var to char var (should probably disallow)
+047 - #warning  Assignment	Assignment of real var to char var (should probably disallow)
+048 - #warning  Assignment	Use of variable before assignment (real -> char)
+049 - #warning  Assignment	Use of variable before assignment (char -> real)
+050 - #error    Assignment	Use of undeclared variable in assignment (undeclared int -> int)
+051 - #codegen  Decls		Use of C reserved word as identifier name (int int)
+052 - #codegen  Decls		Use of less well known C reserved word as identifier name (int volatile)
+053 - #option   Assignment	Assignment of INT_MAX + 1 to int var (ought to produce a warning at least)
+054 - #option   Assignment	Assignment of INT_MIN - 1 to int var (ought to produce a warning at least)
+055 - #codegen  Assignment	Assignment of - 1 (note the space) to int var
+056 - #codegen  Assignment	Assignment of -0 to int var
+057 - #codegen  Write		Write constant 0
+058 - #codegen  Write		Write constant 3.14159
+059 - #codegen  Write		Write constant -3.14159
+060 - #codegen  Write		Write constant 'x'
+061 - #codegen  Write		Write constant 'X'
+062 - #codegen  Write		Write constants 3, 14159, 'x' (all on one line)
+063 - #error    Syntax 		Invalid char ('.')
+064 - #codegen  Write		Write constants 1, 3.14159, 'x' (all on separate lines)
+065 - #codegen  Write		Assign 1 to int, write int
+066 - #codegen  Write		Assign 3.14159 to real, write real
+067 - #codegen  Write		Assign 'x' to char, write char
+068 - #codegen  Write 		Write multiple constants and vars
+069 - #codegen  Write 		Write subexpression constant (1)
+070 - #codegen  Write 		Write subexpression var (int)
+071 - #warning  Write 		Write uninitialised var
+072 - #codegen  Arithmetic	1 + 1 = 2
+073 - #codegen  Arithmetic	-1 + -1 = -2
+074 - #codegen  Arithmetic	1 - 1 = 0
+075 - #codegen  Arithmetic	-1 - -1 = 0
+076 - #codegen  Write  		Write subexp 1 + 1 = 2
+077 - #codegen  Write  		Write subexp -1 + -1 = -2
+078 - #codegen  Write  		Write subexp 1 - 1 = 0
+079 - #codegen  Write  		Write subexp -1 - -1 = 0 
+080 - #error    Syntax		Attempt to write subexp without brackets: WRITE(-1 - -1)
+081 - #codegen  Arithmetic	2 * 2 = 4
+082 - #codegen  Arithmetic	2 * -2 = -4
+083 - #codegen  Arithmetic	-2 * -2 = 4
+084 - #codegen  Arithmetic	2 * 1 = 2 	(to check optimisation doesn't break it)
+085 - #codegen  Arithmetic	2 * 0 = 0	(to check optimisation doesn't break it)
+086 - #codegen  Arithmetic	20 / 2 = 10
+087 - #codegen  Arithmetic	20 / -2 = -10
+088 - #codegen  Arithmetic	-20 / -2 = 10
+089 - #codegen  Arithmetic	20 / 1 = 20 (to check optimisation doesn't break it)
+090 - #codegen  Arithmetic	1 / 20 = 0	(should be using integer division really)
+091 - #codegen  Arithmetic  1 + 2 * 3 = 7 	to test BODMAS
+092 - #codegen  Arithmetic  3 + 6 / 3 = 5 	to test BODMAS
+093 - #codegen  Arithmetic  2 * 3 + 1 = 7 	to test BODMAS
+094 - #codegen  Arithmetic  6 / 3 + 3 = 5 	to test BODMAS
+095 - #codegen  Arithmetic  (1 + 2) * 3 = 9 	to test BODMAS and subexpressions
+096 - #codegen  Arithmetic  (3 + 6) / 3 = 3 	to test BODMAS and subexpressions
+097 - #codegen  Arithmetic  2 * (3 + 1) = 8 	to test BODMAS and subexpressions
+098 - #codegen  Arithmetic  6 / (3 + 3) = 1 	to test BODMAS and subexpressions
+099 - #error    Syntax  	6 / (3 + )  -- invalid expression
+100 - #codegen  Arithmetic  3.2 + 1.3 = 4.5		FP arithmetic
+101 - #codegen  Arithmetic  3.2 - 1.3 = 1.9		FP arithmetic
+102 - #codegen  Arithmetic  3.2 * 1.3 = 4.16	FP arithmetic
+103 - #codegen  Arithmetic  3.2 / 0.8 = 4.0		FP arithmetic
+104 - #codegen  Arithmetic  10 + 2.41 = 12.41   Mixed arithmetic
+105 - #codegen  Arithmetic  10 * 2.41 = 24.1    Mixed arithmetic
+106 - #codegen  Arithmetic  10 - 2.41 = 7.59    Mixed arithmetic
+107 - #codegen  Arithmetic  10 / 4.0  = 2.5     Mixed arithmetic
+108 - #codegen  Arithmetic  2.41 * 10 = 24.1    Mixed arithmetic
+109 - #codegen  Arithmetic  2.41 + 10 = 12.41   Mixed arithmetic
+110 - #option   Arithmetic  'a' + 1 = 'b'		Could be disallowed
+111 - #option   Arithmetic  'b' - 1 = 'a'		Could be disallowed
+112 - #option   Arithmetic  'a' * 1 = 'a'		Could be disallowed
+113 - #option   Arithmetic  'b' / 1 = 'b'		Could be disallowed
+114 - #warning  Arithmetic  'b' * 2 = 'b'		Should be disallowed
+115 - #codegen  Ifs			Test simple if using constants (condition = true)
+116 - #codegen  Ifs			Test simple if using constants (condition = false)
+117 - #codegen  Ifs			Test simple if using variables (condition = true)
+118 - #codegen  Ifs			Test simple if using variables (condition = false)
+119 - #codegen  Ifs			Test simple if using vars and multiple statements
+120 - #codegen  Ifs			Test simple if-else using vars (condition = true)
+121 - #codegen  Ifs			Test simple if-else using vars (condition = false)
+122 - #codegen  Ifs			Test simple if-else using vars and multiple statements
+123 - #warning  Syntax      Extra semicolon inside if
+124 - #codegen  Ifs			Test EQ (1 = 1)
+125 - #codegen  Ifs			Test EQ (1 = 2)
+126 - #codegen  Ifs			Test NEQ (1 <> 1)
+127 - #codegen  Ifs			Test NEQ (1 <> 2)
+128 - #codegen  Ifs			Test LT (1 < 2)
+129 - #codegen  Ifs			Test LT (2 < 1)
+130 - #codegen  Ifs			Test GT (1 > 2)
+131 - #codegen  Ifs			Test GT (2 > 1)
+132 - #codegen  Ifs			Test LTE (1 <= 2)
+133 - #codegen  Ifs			Test LTE (2 <= 1)
+134 - #codegen  Ifs			Test GTE (1 >= 2)
+135 - #codegen  Ifs			Test GTE (2 >= 1)
+136 - #codegen  Ifs			Test LTE (1 <= 1)
+137 - #codegen  Ifs			Test GTE (1 >= 1)
+138 - #codegen  Ifs			Test LTE (1<=1)
+139 - #codegen  Ifs			Test GTE (1>=1)
+140 - #codegen  Ifs			Test NOT (! 1 = 1) should be false
+141 - #codegen  Ifs			Test NOT (! 1 = 2) should be true
+142 - #codegen  Ifs			Test NOT NOT (!! 1 = 1) should be true
+143 - #codegen  Ifs			Test NOT NOT (!! 1 = 2) should be false
+144 - #codegen  IFs 		Test 1 = 1 AND 1 = 2 (should be false)
+145 - #codegen  IFs 		Test 1 = 1 OR 1 = 2 (should be true)
+146 - #codegen  Do          Simple do loop to print 12345
+147 - #codegen  Do          Simple do loop to print x (initial condition false)
+148 - #codegen  While       Simple while loop to print 12345
+149 - #codegen  While       Simple while loop to print nothing (initial condition false)
+150 - #codegen  For         Simple for loop to print 12345
+151 - #codegen  For         Simple for loop to print 54321
+152 - #codegen  For			Simple for loop to print 1 (start = end)
+153 - #codegen  For			Simple for loop to print nothing (initial condition is false)
+154 - #codegen  For			Negative for loop numbers (-5-4-3-2-1012345)
+155 - #codegen  For			Negative for loop numbers (543210-1-2-3-4-5)
+156 - #option   For         Use of float as loop iterator (0.10.20.30.40.5)
+157 - #option   For         Use of char as loop iterator (abcdefg)
+158 - #codegen  Read		Read int
+159 - #codegen  Read		Read float
+160 - #codegen  Read		Read char

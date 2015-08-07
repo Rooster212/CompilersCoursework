@@ -1,0 +1,18 @@
+Test:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f,g OF TYPE CHARACTER;
+	volatile OF TYPE INTEGER;
+
+CODE
+
+  1 -> volatile;
+
+  NEWLINE
+
+ENDP 
+
+Test.

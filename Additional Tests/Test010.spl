@@ -1,0 +1,13 @@
+Test10:
+
+DECLARATIONS
+   
+	a OF TYPE CHARACTER;
+
+CODE
+
+  NEWLINE
+
+ENDP 
+
+Test10.

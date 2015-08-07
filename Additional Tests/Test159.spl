@@ -1,0 +1,15 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE REAL;
+	
+CODE
+
+  READ(a);
+  WRITE(a);
+  NEWLINE
+
+ENDP 
+
+Test.

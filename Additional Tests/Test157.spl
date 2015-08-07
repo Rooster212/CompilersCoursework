@@ -1,0 +1,16 @@
+Test:
+
+DECLARATIONS
+   
+  a OF TYPE CHARACTER;
+	
+CODE
+
+  FOR a IS 'a' BY 1 TO 'g' DO
+     WRITE(a)
+  ENDFOR;
+  NEWLINE
+
+ENDP 
+
+Test.

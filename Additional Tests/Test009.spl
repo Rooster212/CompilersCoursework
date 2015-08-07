@@ -1,0 +1,13 @@
+Test9:
+
+DECLARATIONS
+   
+	a OF TYPE REAL;
+
+CODE
+
+  NEWLINE
+
+ENDP 
+
+Test9.

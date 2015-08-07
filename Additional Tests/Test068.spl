@@ -1,0 +1,23 @@
+Test:
+
+DECLARATIONS
+   
+	a,b,c OF TYPE INTEGER;
+	d,e OF TYPE REAL;
+	f,g OF TYPE CHARACTER;
+	
+CODE
+
+  1 -> a;
+  3.14159 ->d;
+  'x' -> f;
+  WRITE(1, a);
+  NEWLINE;
+  WRITE(d);
+  NEWLINE;
+  WRITE(1, f);
+  NEWLINE
+  
+ENDP 
+
+Test.
